@@ -8,7 +8,7 @@ export const RegistrationForm = () => {
     <SForm>
       <div>
         <SLabel htmlFor="name">Name: </SLabel>
-        <SInput placeholder="Name" id="name" type="text" />
+        <SInput name="name" placeholder="Name" id="name" type="text" />
         <svg
           width="50"
           height="50"
@@ -72,15 +72,25 @@ export const RegistrationForm = () => {
       </div>
       <div>
         <SLabel htmlFor="lastname">Lastname: </SLabel>
-        <SInput placeholder="Lastname" id="lastname" type="text" />
+        <SInput
+          name="lastname"
+          placeholder="Lastname"
+          id="lastname"
+          type="text"
+        />
       </div>
       <div>
         <SLabel htmlFor="email">Email: </SLabel>
-        <SInput placeholder="Email" id="email" type="email" />
+        <SInput name="email" placeholder="Email" id="email" type="email" />
       </div>
       <div>
         <SLabel htmlFor="password">Password: </SLabel>
-        <SInput placeholder="Password" id="password" type="password" />
+        <SInput
+          name="password"
+          placeholder="Password"
+          id="password"
+          type="password"
+        />
       </div>
       <SButton>
         Registration
