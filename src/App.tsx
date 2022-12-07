@@ -1,10 +1,10 @@
-import { Registration } from "./view/Registration";
+import { RegistrationForm } from "./view/RegistrationForm";
 
 const App = () => {
   return (
-    <div className="App">
-      <Registration />
-    </div>
+    <>
+      <RegistrationForm />
+    </>
   );
 };
 
