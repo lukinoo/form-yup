@@ -1,6 +1,7 @@
 import { createContext, FC, ReactNode } from "react";
+import type { TValidationValues } from "./ValidationContext.types";
 
-export const validationContext = createContext({});
+export const validationContext = createContext({} as TValidationValues);
 
 type TProps = {
   children: ReactNode;
