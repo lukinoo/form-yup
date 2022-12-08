@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { SButton } from "../../components/SButton";
 import { SInput } from "../../components/SInput";
 import { SLabel } from "../../components/SLabel";
@@ -6,7 +6,10 @@ import { validationContext } from "../../Context/ValidationContext/createContext
 import { SForm } from "./RegistrationForm.styled";
 
 export const RegistrationForm = () => {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const { formik } = useContext(validationContext);
+
+  console.log(formik.values);
 
   return (
     <SForm>
@@ -74,14 +77,30 @@ export const RegistrationForm = () => {
             ? formik.errors.password
             : "Password"}
         </SLabel>
-        <SInput
-          name="password"
-          placeholder="Password"
-          onBlur={formik.handleBlur}
-          id="password"
-          type="password"
-          onChange={formik.handleChange}
-        />
+        <div className="password__wrapper">
+          <SInput
+            name="password"
+            placeholder="Password"
+            onBlur={formik.handleBlur}
+            id="password"
+            type={`${showPassword ? "text" : "password"}`}
+            onChange={formik.handleChange}
+          />
+          <button
+            onClick={() => setShowPassword((c) => !c)}
+            className="show-password"
+            type="button"
+          >
+            <img
+              src={
+                showPassword
+                  ? "assets/svg/eye-close.svg"
+                  : "assets/svg/eye-open.svg"
+              }
+              alt="password hide show"
+            />
+          </button>
+        </div>
       </div>
       <SButton>
         Registration
