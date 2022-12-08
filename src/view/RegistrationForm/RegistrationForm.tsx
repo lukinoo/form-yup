@@ -9,8 +9,6 @@ export const RegistrationForm = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const { formik } = useContext(validationContext);
 
-  console.log(formik.values);
-
   return (
     <SForm>
       <div>
@@ -26,6 +24,7 @@ export const RegistrationForm = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           name="name"
+          value={formik.values.name}
           placeholder="Name"
           id="name"
           type="text"
@@ -45,6 +44,7 @@ export const RegistrationForm = () => {
           name="lastname"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          value={formik.values.lastname}
           placeholder="Lastname"
           id="lastname"
           type="text"
@@ -64,6 +64,7 @@ export const RegistrationForm = () => {
           onBlur={formik.handleBlur}
           name="email"
           placeholder="Email"
+          value={formik.values.email}
           id="email"
           type="email"
         />
@@ -82,6 +83,7 @@ export const RegistrationForm = () => {
             name="password"
             placeholder="Password"
             onBlur={formik.handleBlur}
+            value={formik.values.password}
             id="password"
             type={`${showPassword ? "text" : "password"}`}
             onChange={formik.handleChange}
