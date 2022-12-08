@@ -11,11 +11,17 @@ export const RegistrationForm = () => {
   return (
     <SForm>
       <div>
-        <SLabel isError={formik.errors.name} htmlFor="name">
-          {formik.errors.name ? formik.errors.name : "Name"}
+        <SLabel
+          isError={formik.errors.name && formik.touched.name}
+          htmlFor="name"
+        >
+          {formik.errors.name && formik.touched.name
+            ? formik.errors.name
+            : "Name"}
         </SLabel>
         <SInput
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           name="name"
           placeholder="Name"
           id="name"
@@ -24,23 +30,35 @@ export const RegistrationForm = () => {
         <img src="assets/svg/logo.svg" alt="js logo" />
       </div>
       <div>
-        <SLabel isError={formik.errors.lastname} htmlFor="lastname">
-          {formik.errors.lastname ? formik.errors.lastname : "Lastname"}
+        <SLabel
+          isError={formik.errors.lastname && formik.touched.lastname}
+          htmlFor="lastname"
+        >
+          {formik.errors.lastname && formik.touched.lastname
+            ? formik.errors.lastname
+            : "Lastname"}
         </SLabel>
         <SInput
           name="lastname"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           placeholder="Lastname"
           id="lastname"
           type="text"
         />
       </div>
       <div>
-        <SLabel isError={formik.errors.email} htmlFor="email">
-          {formik.errors.email ? formik.errors.email : "Email"}
+        <SLabel
+          isError={formik.errors.email && formik.touched.email}
+          htmlFor="email"
+        >
+          {formik.errors.email && formik.touched.email
+            ? formik.errors.email
+            : "Email"}
         </SLabel>
         <SInput
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           name="email"
           placeholder="Email"
           id="email"
@@ -48,12 +66,18 @@ export const RegistrationForm = () => {
         />
       </div>
       <div>
-        <SLabel isError={formik.errors.password} htmlFor="password">
-          {formik.errors.password ? formik.errors.password : "Password"}
+        <SLabel
+          isError={formik.errors.password && formik.touched.password}
+          htmlFor="password"
+        >
+          {formik.errors.password && formik.touched.password
+            ? formik.errors.password
+            : "Password"}
         </SLabel>
         <SInput
           name="password"
           placeholder="Password"
+          onBlur={formik.handleBlur}
           id="password"
           type="password"
           onChange={formik.handleChange}

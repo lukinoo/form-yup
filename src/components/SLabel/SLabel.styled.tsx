@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-type TError = { isError?: string };
+type TError = { isError?: string | boolean };
 
 export const SLabel = styled.label<TError>`
   font-size: 1rem;
