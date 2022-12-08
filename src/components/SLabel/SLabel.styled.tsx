@@ -1,7 +1,15 @@
 import styled from "styled-components";
 
-export const SLabel = styled.label`
-  font-size: 1.1rem;
+type TError = { isError?: string };
+
+export const SLabel = styled.label<TError>`
+  font-size: 1rem;
   font-weight: 400;
-  color: #111;
+  color: ${({ isError }) => {
+    if (isError) {
+      return "#e91b08";
+    }
+
+    return "#111";
+  }};
 `;

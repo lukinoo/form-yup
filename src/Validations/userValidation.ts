@@ -7,9 +7,9 @@ export const userValidation = Yup.object({
   lastname: Yup.string()
     .max(20, "Lastname must be 20 character")
     .required("Lastname is required"),
-  email: Yup.string().email("Invalid email").required(),
+  email: Yup.string().email("Invalid email").required("Email is required"),
   password: Yup.string()
-    .required("Please Enter your password")
+    .required("Please Enter password")
     .matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
       "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
