@@ -10,4 +10,7 @@ export const SInput = styled.input`
   padding: 0.5rem;
   font-family: inherit;
   font-size: 1.2rem;
+  &:focus {
+    border: 1px solid #665dc3;
+  }
 `;
