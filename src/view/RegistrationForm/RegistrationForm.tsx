@@ -10,7 +10,7 @@ export const RegistrationForm = () => {
   const { formik } = useContext(validationContext);
 
   return (
-    <SForm>
+    <SForm onSubmit={formik.handleSubmit}>
       <div>
         <SLabel
           isError={formik.errors.name && formik.touched.name}
@@ -104,7 +104,7 @@ export const RegistrationForm = () => {
           </button>
         </div>
       </div>
-      <SButton>
+      <SButton type="submit">
         Registration
         <svg
           xmlns="http://www.w3.org/2000/svg"
