@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const SForm = styled.form`
+export const SForm = styled(motion.form)`
   max-width: 360px;
   width: 100%;
   display: flex;
