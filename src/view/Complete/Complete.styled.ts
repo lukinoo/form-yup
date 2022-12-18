@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const SComplete = styled.div`
+export const SComplete = styled(motion.div)`
   max-width: 600px;
   background: #ffffff;
   padding: 1.5rem 1.8rem;

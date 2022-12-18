@@ -10,7 +10,13 @@ export const RegistrationForm = () => {
   const { formik } = useContext(validationContext);
 
   return (
-    <SForm onSubmit={formik.handleSubmit}>
+    <SForm
+      initial={{ opacity: 0, y: -200 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -100 }}
+      transition={{ ease: "easeOut", delay: 0.5, duration: 0.7 }}
+      onSubmit={formik.handleSubmit}
+    >
       <div>
         <SLabel
           isError={formik.errors.name && formik.touched.name}
